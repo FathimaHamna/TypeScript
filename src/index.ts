@@ -83,6 +83,7 @@ const dog3 = {
 
 */
 
+/*
 //LESSON 03
 //Combining types
 
@@ -104,8 +105,26 @@ type Monkey = {
     diet: string;
 } & Animal; // Must have all properties from Animal + Monkey
 
-/*
-const m: Monkey = {
-    diet: "food",  //Error at m: Missing properties from Animal (name,age,..)
-}
+
+//const m: Monkey = {
+//   diet: "food",  //Error at m: Missing properties from Animal (name,age,..)
+//}
+
+//**********
 */
+
+
+//LESSON 04
+//Typing Edge Cases
+
+type Animal = {
+    name: string,
+    age: number;
+    colors: string[];
+    legs?: number;    //this question mark means that legs is optional to be a number
+};
+
+const s1 = new Set<any>();  //any type
+const s2 = new Set<number>();  //number type
+
+//**** 
