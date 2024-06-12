@@ -190,6 +190,7 @@ const price = getShirtPrice(ShirtSize.Small);
 //***
 */
 
+/*
 //LESSON 07
 //Type guards and type checking
 
@@ -218,3 +219,15 @@ const callAnimalFunc = (animal: Fish | Dog) => {
 }
 
 //****** 
+*/
+
+//LESSON 08
+//Ignoring Type checking
+
+let x: number = 2;
+
+// @ts-ignore
+x = "hello";
+
+
+//******* 
