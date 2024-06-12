@@ -113,7 +113,7 @@ type Monkey = {
 //**********
 */
 
-
+/*
 //LESSON 04
 //Typing Edge Cases
 
@@ -128,3 +128,35 @@ const s1 = new Set<any>();  //any type
 const s2 = new Set<number>();  //number type
 
 //**** 
+*/
+
+//LESSON 05
+//Interfaces
+
+type Fish = {
+    name: string;
+    swim: () => void;
+};
+
+type Dog = {
+    name: string;
+    bark: () => void;
+};
+
+interface Animal {
+    name: string;
+}
+
+//without interfaces
+const printName1 = (animal: Dog | Fish) => {
+    console.log(animal.name);
+};
+ //with interfaces
+const printName2 = (animal: Animal) => {
+    console.log(animal.name);
+};
+
+const x: Fish = {
+    name: "hello",
+    swim: () => {}
+}
