@@ -41,6 +41,7 @@ var obj: object = {};
 //******* 
 */
 
+/*
 //LESSON 02
 
 type Animal = {
@@ -77,3 +78,34 @@ const dog3 = {
     age: 10,
     colors: ["brown","black"],
 } as Animal
+
+//****** 
+
+*/
+
+//LESSON 03
+//Combining types
+
+type Animal = {
+    name: string,
+    age: number;
+    colors: string[] | string;
+    legs?: number;    //this question mark means that legs is optional to be a number
+};
+
+type Farm = {
+    animals: Animal[]
+    animalNamesToObjects: {
+        [name: string]: Animal
+    }
+}
+
+type Monkey = {
+    diet: string;
+} & Animal; // Must have all properties from Animal + Monkey
+
+/*
+const m: Monkey = {
+    diet: "food",  //Error at m: Missing properties from Animal (name,age,..)
+}
+*/
