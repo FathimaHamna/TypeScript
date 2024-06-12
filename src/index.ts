@@ -164,7 +164,7 @@ const x: Fish = {
 //****** 
 */
 
-
+/*
 //LESSON 06
 //Enums
 
@@ -188,3 +188,33 @@ const getShirtPrice = (shirtSize: ShirtSize) => {
 const price = getShirtPrice(ShirtSize.Small);
 
 //***
+*/
+
+//LESSON 07
+//Type guards and type checking
+
+type Fish = {
+    name: string;
+    swim: () => void;
+};
+
+type Dog = {
+    name: string;
+    bark: () => void;
+};
+
+//Type Guard
+
+const isFish = (animal: Fish | Dog): animal is Fish => {
+    return (animal as Fish).swim !== undefined
+}
+
+const callAnimalFunc = (animal: Fish | Dog) => {
+    //animal.bark()  //error because bark is not a property
+    //(animal as Fish).swim()  //This will raise a runtime exception
+    //if(typeof animal == "Fish") {}  //Error
+    if (isFish(animal)) animal.swim()
+    else animal.bark()
+}
+
+//****** 
