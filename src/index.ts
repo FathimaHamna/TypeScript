@@ -1,5 +1,6 @@
-//LESSON 01
+/*
 
+//LESSON 01
 let x: number;
 let y: string;
 let z: any;
@@ -37,4 +38,42 @@ var tup: [string,number] = ["hello",2]
 
 var obj: object = {};
 
+//******* 
+*/
 
+//LESSON 02
+
+type Animal = {
+    name: string,
+    age: number;
+    colors: string[];
+    legs?: number;    //this question mark means that legs is optional to be a number
+};
+
+
+const printAnimal1 = (animal: Animal) => {
+    console.log(animal.name, animal.age, animal.legs)
+}
+
+const printAnimal2 = (animal: Animal) => {
+    const x = (animal.legs!== undefined ? animal.legs: 0)- 5; //if animal.legs is undefined, then use animal.legs and otherwise use zero
+}
+
+
+const dog1 = {
+    name: "tim",
+    age: 10,
+    colors: ["brown","black"],
+};
+
+const dog2: Animal = {
+    name: "tim",
+    age: 10,
+    colors: ["brown","black"],
+};
+
+const dog3 = {
+    name: "tim",
+    age: 10,
+    colors: ["brown","black"],
+} as Animal
