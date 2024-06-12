@@ -129,7 +129,7 @@ const s2 = new Set<number>();  //number type
 
 //**** 
 */
-
+/*
 //LESSON 05
 //Interfaces
 
@@ -160,3 +160,31 @@ const x: Fish = {
     name: "hello",
     swim: () => {}
 }
+
+//****** 
+*/
+
+
+//LESSON 06
+//Enums
+
+enum ShirtSize {
+    Small = "small",
+    Medium = "medium",
+    Large = "large",
+}
+
+const getShirtPrice = (shirtSize: ShirtSize) => {
+    switch(shirtSize) {
+        case ShirtSize.Small:
+            return 10;
+        case ShirtSize.Medium:
+            return 20;
+        case ShirtSize.Large:
+            return 30;
+        }
+};
+
+const price = getShirtPrice(ShirtSize.Small);
+
+//***
